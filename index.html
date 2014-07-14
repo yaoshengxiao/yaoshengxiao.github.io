@@ -47,11 +47,62 @@
     <header>
       
   
+    <h1 class="title"><a href="/2014/07/15/sublime text 2安装插件/">sublime text 2安装插件</a></h1>
+  
+
+      
+      <time datetime="2014-07-14T16:03:13.000Z">Jul 15 2014</time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>sublime安装插件有两种方式，一种是直接下载插件文件，放到sublime安装目录下。另一种是使用Package Control来安装。<br>Package Control安装插件比较方便，我使用的就是这种方法。</p>
+<h2 id="安装Package_Control插件">安装Package Control插件</h2>
+<p>按Ctrl+`调出console，然后输入以下代码</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>
+import urllib2,os;
+pf=<span class="string">'Package Control.sublime-package'</span>;
+ipp=sublime.installed_packages_path();
+os.makedirs(ipp) <span class="keyword">if</span> <span class="keyword">not</span> os.path.<span class="keyword">exists</span>(ipp) <span class="keyword">else</span> None;
+<span class="keyword">open</span>(os.path.<span class="keyword">join</span>(ipp,pf),<span class="string">'wb'</span>).<span class="keyword">write</span>(urllib2.urlopen(<span class="string">'http://sublime.wbond.net/'</span>+pf.replace(<span class="string">' '</span>,<span class="string">'%20'</span>)).<span class="keyword">read</span>())
+</pre></td></tr></table></figure>
+
+<p>等待安装完毕，然后重启Sublime Text 2，在Perferences-&gt;package settings中有package control这一项，表示安装成功！</p>
+<h2 id="安装”GBK_Encoding_Support”插件">安装”GBK Encoding Support”插件</h2>
+<p>Sublime Text 2默认不支持gbk编码文件，打开后会出现乱码，安装”GBK Encoding Support”插件使其支持GBK编码。</p>
+<p>按command+Shift+P快捷键，打开命令行模式，输入Install Package</p>
+<p><img src="http://cl.ly/image/1j2v352e0T1s/Image%202014-07-14%20at%2023.39.33.png" alt=""></p>
+<p>回车后，将会弹出</p>
+<p><img src="http://cl.ly/image/2G0c3f431o2t/Image%202014-07-14%20at%2023.59.49.png" alt=""></p>
+<p>输入 “GBK Encoding Support” ，然后回车，将会自动安装这个插件。<br>还可以再安装“ConvertToUTF8”插件，用来转换文件编码到utf8。</p>
+
+      
+    </div>
+    
+      
+    
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  <div class="post-content">
+    <header>
+      
+  
     <h1 class="title"><a href="/2014/07/14/城市非典型小清新/">城市非典型小清新</a></h1>
   
 
       
-      <time datetime="2014-07-14T07:24:57.000Z">Jul 14 2014</time>
+      <time datetime="2014-07-14T07:29:01.000Z">Jul 14 2014</time>
       
     </header>
     <div class="entry">
