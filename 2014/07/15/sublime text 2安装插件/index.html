@@ -8,7 +8,21 @@
   
   <meta name="description" content="sublime安装插件有两种方式，一种是直接下载插件文件，放到sublime安装目录下。另一种是使用Package Control来安装。Package Control安装插件比较方便，我使用的就是这种方法。
 安装Package Control插件
-按Ctrl+`调出console，然后输入以下代码">
+按Ctrl+`调出console，然后输入以下代码
+1
+2
+3
+4
+5
+import urllib2,os;
+pf=&#39;Package Control.sublime-package&#39;;
+ipp=sublime.installed_packages_path();
+os.makedirs(ipp) if not os.path.exists(ipp) else None;
+open(os.path.join(ipp,pf),&#39;wb&#39;).write(urllib2.urlopen(&#39;http://sublime.wbond.net/&#39;+pf.replace(&#39; &#39;,&#39;%20&#39;)).read())
+
+
+等待安装完毕，然后重启Sublime Text 2，在Perferences-&amp;gt;package settings中有package control这一项，表示安装成功！
+安装”GBK Encoding Support”插件">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -54,7 +68,7 @@
   
 
       
-      <time datetime="2014-07-14T16:03:13.000Z">Jul 15 2014</time>
+      <time datetime="2014-07-15T05:03:24.000Z">Jul 15 2014</time>
       
     </header>
     <div class="entry">
@@ -67,9 +81,7 @@
 3
 4
 5
-6
-</pre></td><td class="code"><pre>
-import urllib2,os;
+</pre></td><td class="code"><pre>import urllib2,os;
 pf=<span class="string">'Package Control.sublime-package'</span>;
 ipp=sublime.installed_packages_path();
 os.makedirs(ipp) <span class="keyword">if</span> <span class="keyword">not</span> os.path.<span class="keyword">exists</span>(ipp) <span class="keyword">else</span> None;
@@ -78,6 +90,8 @@ os.makedirs(ipp) <span class="keyword">if</span> <span class="keyword">not</span
 
 <p>等待安装完毕，然后重启Sublime Text 2，在Perferences-&gt;package settings中有package control这一项，表示安装成功！</p>
 <h2 id="安装”GBK_Encoding_Support”插件">安装”GBK Encoding Support”插件</h2>
+<a id="more"></a>
+
 <p>Sublime Text 2默认不支持gbk编码文件，打开后会出现乱码，安装”GBK Encoding Support”插件使其支持GBK编码。</p>
 <p>按command+Shift+P快捷键，打开命令行模式，输入Install Package</p>
 <p><img src="http://cl.ly/image/1j2v352e0T1s/Image%202014-07-14%20at%2023.39.33.png" alt=""></p>
