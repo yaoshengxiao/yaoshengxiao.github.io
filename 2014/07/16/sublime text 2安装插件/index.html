@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   
-  <title>X2OX › sublime text 2安装插件</title>
+  <title>X2OX › sublime text安装插件</title>
   <meta name="author" content="yaosheng">
   
   <meta name="description" content="sublime安装插件有两种方式，一种是直接下载插件文件，放到sublime安装目录下。另一种是使用Package Control来安装。Package Control安装插件比较方便，我使用的就是这种方法。
 安装Package Control插件
-按Ctrl+`调出console，然后输入以下代码
+安装指导
+按Ctrl+`调出console，然后输入以下代码Sublime text 2 代码
 1
 2
 3
@@ -19,15 +20,28 @@ pf=&#39;Package Control.sublime-package&#39;;
 ipp=sublime.installed_packages_path();
 os.makedirs(ipp) if not os.path.exists(ipp) else None;
 open(os.path.join(ipp,pf),&#39;wb&#39;).write(urllib2.urlopen(&#39;http://sublime.wbond.net/&#39;+pf.replace(&#39; &#39;,&#39;%20&#39;)).read())
+Sublime text 3 代码1
+2
+3
+4
+5
+6
+import urllib.request,os,hashlib; 
+h = &#39;7183a2d3e96f11eeadd761d777e62404&#39; + &#39;e330c659d4bb41d3bdf022e94cab3cd0&#39;; 
+pf = &#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); 
+by = urllib.request.urlopen( &#39;http://sublime.wbond.net/&#39; + pf.replace(&#39; &#39;, &#39;%20&#39;)).read(); 
+dh = hashlib.sha256(by).hexdigest(); 
+print(&#39;Error validating download (got %s instead of %s), please try manual install&#39; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &#39;wb&#39; ).write(by)
 
 
-等待安装完毕，然后重启Sublime Text 2，在Perferences-&amp;gt;package settings中有package control这一项，表示安装成功！
+
+等待安装完毕，Sublime Text2需要重启 ，然后在Perferences-&amp;gt;package settings中有package control这一项，表示安装成功！
 安装”GBK Encoding Support”插件">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="sublime text 2安装插件"/>
+  <meta property="og:title" content="sublime text安装插件"/>
   <meta property="og:site_name" content="X2OX"/>
 
   
@@ -64,18 +78,19 @@ open(os.path.join(ipp,pf),&#39;wb&#39;).write(urllib2.urlopen(&#39;http://sublim
     <header>
       
   
-    <h1 class="title">sublime text 2安装插件</h1>
+    <h1 class="title">sublime text安装插件</h1>
   
 
       
-      <time datetime="2014-07-15T05:03:24.000Z">Jul 15 2014</time>
+      <time datetime="2014-07-16T07:13:57.000Z">Jul 16 2014</time>
       
     </header>
     <div class="entry">
       
         <p>sublime安装插件有两种方式，一种是直接下载插件文件，放到sublime安装目录下。另一种是使用Package Control来安装。<br>Package Control安装插件比较方便，我使用的就是这种方法。</p>
 <h2 id="安装Package_Control插件">安装Package Control插件</h2>
-<p>按Ctrl+`调出console，然后输入以下代码</p>
+<p><a href="https://sublime.wbond.net/installation" target="_blank" rel="external">安装指导</a></p>
+<p>按Ctrl+`调出console，然后输入以下代码<br>Sublime text 2 代码</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 3
@@ -86,13 +101,26 @@ pf=<span class="string">'Package Control.sublime-package'</span>;
 ipp=sublime.installed_packages_path();
 os.makedirs(ipp) <span class="keyword">if</span> <span class="keyword">not</span> os.path.<span class="keyword">exists</span>(ipp) <span class="keyword">else</span> None;
 <span class="keyword">open</span>(os.path.<span class="keyword">join</span>(ipp,pf),<span class="string">'wb'</span>).<span class="keyword">write</span>(urllib2.urlopen(<span class="string">'http://sublime.wbond.net/'</span>+pf.replace(<span class="string">' '</span>,<span class="string">'%20'</span>)).<span class="keyword">read</span>())
+</pre></td></tr></table></figure><br>Sublime text 3 代码<br><br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>import urllib.request,os,hashlib; 
+h = <span class="string">'7183a2d3e96f11eeadd761d777e62404'</span> + <span class="string">'e330c659d4bb41d3bdf022e94cab3cd0'</span>; 
+pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); 
+<span class="keyword">by</span> = urllib.request.urlopen( <span class="string">'http://sublime.wbond.net/'</span> + pf.<span class="built_in">replace</span>(<span class="string">' '</span>, <span class="string">'%20'</span>)).<span class="built_in">read</span>(); 
+dh = hashlib.sha256(<span class="keyword">by</span>).hexdigest(); 
+print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> <span class="built_in">open</span>(os.path.join( ipp, pf), <span class="string">'wb'</span> ).<span class="built_in">write</span>(<span class="keyword">by</span>)
 </pre></td></tr></table></figure>
 
-<p>等待安装完毕，然后重启Sublime Text 2，在Perferences-&gt;package settings中有package control这一项，表示安装成功！</p>
+
+<p>等待安装完毕，Sublime Text2需要重启 ，然后在Perferences-&gt;package settings中有package control这一项，表示安装成功！</p>
 <h2 id="安装”GBK_Encoding_Support”插件">安装”GBK Encoding Support”插件</h2>
 <a id="more"></a>
 
-<p>Sublime Text 2默认不支持gbk编码文件，打开后会出现乱码，安装”GBK Encoding Support”插件使其支持GBK编码。</p>
+<p>Sublime Text 默认不支持gbk编码文件，打开后会出现乱码，安装”GBK Encoding Support”插件使其支持GBK编码。</p>
 <p>按command+Shift+P快捷键，打开命令行模式，输入Install Package</p>
 <p><img src="http://cl.ly/image/1j2v352e0T1s/Image%202014-07-14%20at%2023.39.33.png" alt=""></p>
 <p>回车后，将会弹出</p>
